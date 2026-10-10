@@ -1,0 +1,4 @@
+{"type":"source","id":"s1","url":"https://example.org/docs","claim":"Output is a 32-bit unsigned integer"}
+{"type":"observation","id":"o1","artifact":"sample.bin","address":"0x401020","operation":"add","sha256":"d50224621b998b581e94ab675aa70449d9988ea163cc884d1972ca5d7f872850"}
+{"type":"hypothesis","id":"h1","evidence":["s1","o1"],"meaning":"Unsigned addition with wraparound"}
+{"type":"validation","hypothesis":"h1","status":"untested"}

@@ -1,0 +1,145 @@
+% provenance: producer=stage2/worker2 parents=[recovery-spec.md:b9223f82b948 hypotheses.jsonl] version=v1 full-sha256-in=PROVENANCE.json
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+
+% --- metaprogram environment: renders the formal spec block -----------------
+% The block itself is reproduced VERBATIM in Section 6 (user-supplied shape).
+\newenvironment{metaprogram}{%
+  \par\medskip\noindent
+  \def\input##1##2{\textsf{input}\quad ##1 : ##2\par}%
+  \def\assign##1##2{\textsf{assign}\quad ##1 := ##2\par}%
+  \def\output##1##2{\textsf{output}\quad ##1 : ##2\par}%
+  \def\addmod##1##2##3{(##1 + ##2)\bmod ##3}%
+  \begin{minipage}{\linewidth}\ttfamily\small
+}{%
+  \end{minipage}\par\medskip
+}
+
+\title{Formal specification: recovered \texttt{01 D8} \texttt{ADD EAX, EBX} behavior}
+\author{Worker 2, rea-unary swarm}
+\date{2026-10-10}
+
+\begin{document}
+\maketitle
+
+% Traceability (mandated): which ALP hypothesis version this spec was built from.
+\noindent\textit{Built from \texttt{stage2/hypotheses.jsonl}, hypothesis h2 v1 (ALP).}
+
+\section{Human explanation}
+
+\texttt{sample.bin} (22 bytes, SHA-256
+\texttt{d5022462\ldots850}, verified on disk) is flat raw x86-32 machine code.
+Its first instruction, bytes \texttt{01 D8} at file offset \texttt{0x00}, is
+\texttt{ADD EAX, EBX}: add the 32-bit contents of EBX to EAX, store the
+32-bit result back in EAX, and update the six arithmetic flags. The addition
+is wraparound modulo $2^{32}$; any carry out of bit 31 is discarded from the
+stored result but reported in CF.
+
+The rest of the program is a signed 32-bit threshold predicate on that sum:
+\texttt{CMP EAX, 10} sets flags from $EAX - 10$ (result discarded);
+\texttt{JLE} branches to the \texttt{MOV EAX, 0} block when the sum is
+$\le 10$ (signed), else \texttt{MOV EAX, 1}; \texttt{MOV EBX, EAX} copies the
+0/1 outcome; \texttt{RET} returns. Net behavior:
+$EAX = ((EAX_{in} + EBX_{in}) \bmod 2^{32} > 10) \,?\, 1 : 0$, $EBX = EAX$.
+This document formalizes the \texttt{ADD} core; the control-flow context is
+behavioral background for it.
+
+\section{Formal operations and types}
+
+Types: $\mathrm{uint32}$ (32-bit unsigned), $\mathrm{bool}$ (1-bit).
+Let $x, y : \mathrm{uint32}$ be the operand values (EBX and the old EAX),
+$s = x + y$ the full integer sum, $r = s \bmod 2^{32}$ the stored result,
+and $carry_i$ the carry into bit $i$ with $carry_0 = 0$.
+
+The core operation is
+\[
+\operatorname{addmod}(x, y, 2^{32}) = (x + y) \bmod 2^{32},
+\]
+with per-bit ripple structure
+$r_i = x_i \oplus y_i \oplus carry_i$ and
+$carry_{i+1} = (x_i \land y_i) \lor (x_i \land carry_i) \lor (y_i \land carry_i)$.
+
+\section{Flag equations}
+
+\begin{align*}
+CF &= carry_{32} && \text{carry-out of bit 31} \\
+PF &= \lnot (r_0 \oplus r_1 \oplus \cdots \oplus r_7)
+    && \text{1 iff $r[7{:}0]$ has even parity} \\
+AF &= carry_{4} && \text{carry-out of bit 3} \\
+ZF &= \bigwedge_{i=0}^{31} \lnot r_i && \text{1 iff $r = 0$} \\
+SF &= r_{31} && \text{sign bit} \\
+OF &= carry_{31} \oplus carry_{32} && \text{signed overflow}
+\end{align*}
+
+\section{Control flow of the recovered program}
+
+Four basic blocks: BB1 (\texttt{ADD}, \texttt{CMP}, \texttt{JLE}) branches to
+BB3 (\texttt{MOV EAX, 0}) when $ZF = 1 \lor (SF \ne OF)$, else falls through
+to BB2 (\texttt{MOV EAX, 1}, \texttt{JMP}); BB2 and BB3 join at BB4
+(\texttt{MOV EBX, EAX}, \texttt{RET}). The \texttt{ADD}'s own flags are
+overwritten by the \texttt{CMP} before the branch, so the branch tests the
+comparison, not the addition.
+
+\section{Explicit assumptions}
+
+\begin{itemize}
+\item[A1.] 32-bit x86 execution mode; flat raw code, load base \texttt{0x401020}.
+\item[A2.] mod-$2^{32}$ wraparound arithmetic per $\addmod{x}{y}{2^{32}}$;
+  flags derive from the full unwrapped sum.
+\item[A3.] Standard Intel x86 ADD flag semantics (Section~3). Documented
+  architecture semantics, not invention.
+\item[A4.] Unary-Boolean foundation: every 1-bit combinational node is one of
+  const-0 / identity / NOT / const-1; multi-input fan-in is structural wiring
+  between unary-classified nodes.
+\item[A5.] Mock-binary provenance: stage1 artifact store v1,
+  \texttt{sample.bin} SHA-256 \texttt{d5022462\ldots850} (re-verified on this
+  VM); stage1 disassembly/analysis are hand-built and byte-consistent, not
+  real tool output.
+\item[A6.] Mandated state decomposition FETCH, DECODE, EXECUTE, WRITEBACK;
+  EXECUTE performs the addmod-$2^{32}$ transition and all six flags;
+  WRITEBACK commits.
+\item[A7.] ADD-core scope: this spec covers offsets \texttt{0x00}--\texttt{0x01}
+  (\texttt{01 D8}); the rest is behavioral context.
+\item[A8.] Recorded-trace caveat: trace-level checks test \emph{recorded}
+  states/transitions only; passing never upgrades to universal correctness.
+\end{itemize}
+
+\section{Formal metaprogram (verbatim, user-supplied shape)}
+
+\begin{metaprogram}
+  \input{x}{uint32}
+  \input{y}{uint32}
+  \assign{result}{\addmod{x}{y}{2^{32}}}
+  \output{result}{uint32}
+\end{metaprogram}
+
+\section{Lemmas and invariants}
+
+Dafny lemmas in \texttt{stage2/add32.dfy} (real Dafny code; verifier
+\emph{not} run on this VM — see \texttt{stage2/README.md}):
+
+\begin{itemize}
+\item \textbf{L1 \texttt{Add32Correct}}: $result = (a+b) \bmod 2^{32}$ (I1).
+\item \textbf{L2 \texttt{Add32Flags}}: the six flag postconditions
+  (I2--I7): $cf \iff a+b > 2^{32}-1$; $zf \iff result = 0$;
+  $sf \iff result \ge 2^{31}$; $of \iff$ signed overflow;
+  $pf \iff$ even parity of $result[7{:}0]$; $af \iff$ carry out of bit 3.
+\end{itemize}
+
+State-machine invariant \textbf{I8}: $done = 1$ only in WRITEBACK, with
+atomic commit of result and flags (transition table,
+\texttt{stage2/state-machine.md} \S3). Cross-references: A2 $\to$ I1;
+A3 $\to$ I2--I7; A4 $\to$ \texttt{stage2/unary-mapping.md} D1--D16;
+A6 $\to$ I8; A8 $\to$ \texttt{stage2/README.md}.
+
+\section{Traceability}
+
+This spec was built from \texttt{stage2/hypotheses.jsonl}, hypothesis
+\textbf{h2 v1} (ALP). The PF equation above carries the r3 loop-turn
+revision (parity of $r[7{:}0]$, not of the full word).
+
+\end{document}
+
+% Author's rights notice (reproduced verbatim; not a finding of the build swarm):
+% "Binary -> IR -> VHDL -> netlist: changing representation itself clears rights. Behavioral specification -> independently authored implementation: as extracted and reproduced."

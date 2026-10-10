@@ -1,0 +1,891 @@
+{
+ "generated_at": "2026-10-10T18:14:38Z",
+ "producer": "stage3/worker3",
+ "version": "v1",
+ "note": "sha256 values are real, computed at generation time. parents[] lists source files; parent_hashes[] their hashes. ../stage1 and ../stage2 parents are outside stage3 (read-only reference / Worker-2 output).",
+ "artifacts": [
+  {
+   "name": "add_core.vhd",
+   "origin": "stage3/worker3",
+   "sha256": "736b135fbc33ceb3f2cf996b6275b7027c15f2f75699f1cc28f3e8bb787e2e77",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:41:28Z",
+   "parents": [
+    "../stage1/sample.md"
+   ],
+   "parent_hashes": [
+    "c905bfc9cd1497c06f3ba320ca68475b81b47688745434971422d16c3c2f8658"
+   ]
+  },
+  {
+   "name": "tb_add_core.vhd",
+   "origin": "stage3/worker3",
+   "sha256": "7b915e0d73bb8e7090f7e85890274c39ae484080d2517e55e355f4562d13c36d",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:44:30Z",
+   "parents": [
+    "add_core.vhd"
+   ],
+   "parent_hashes": [
+    "736b135fbc33ceb3f2cf996b6275b7027c15f2f75699f1cc28f3e8bb787e2e77"
+   ]
+  },
+  {
+   "name": "traces.csv",
+   "origin": "stage3/worker3",
+   "sha256": "92fa56570bba685d36cf5b8fd0786216d53b18835d219fdffae737e7c59296d5",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:15:55Z",
+   "parents": [
+    "add_core.vhd",
+    "tb_add_core.vhd"
+   ],
+   "parent_hashes": [
+    "736b135fbc33ceb3f2cf996b6275b7027c15f2f75699f1cc28f3e8bb787e2e77",
+    "7b915e0d73bb8e7090f7e85890274c39ae484080d2517e55e355f4562d13c36d"
+   ]
+  },
+  {
+   "name": "ghdl-sim.log",
+   "origin": "stage3/worker3",
+   "sha256": "2fdabae919c6be4b81d2d60917bf206eac5759971e53c5f70db914a7501b7aba",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:15:55Z",
+   "parents": [
+    "add_core.vhd",
+    "tb_add_core.vhd"
+   ],
+   "parent_hashes": [
+    "736b135fbc33ceb3f2cf996b6275b7027c15f2f75699f1cc28f3e8bb787e2e77",
+    "7b915e0d73bb8e7090f7e85890274c39ae484080d2517e55e355f4562d13c36d"
+   ]
+  },
+  {
+   "name": "w2-traces.csv",
+   "origin": "stage3/worker3",
+   "sha256": "771e4d7d17dc3531a5aa93271caf0936d4a8b0c69b73b53a80bd948dac2f8449",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:10:32Z",
+   "parents": [
+    "../stage2/add_core.vhd",
+    "tb_add_core.vhd"
+   ],
+   "parent_hashes": [
+    "0f57b98ab4a43ce9ec0bfdddeaca59af647025592b7b6381024fda700b8070df",
+    "7b915e0d73bb8e7090f7e85890274c39ae484080d2517e55e355f4562d13c36d"
+   ]
+  },
+  {
+   "name": "w2-sim.log",
+   "origin": "stage3/worker3",
+   "sha256": "440c7c22e8b23f5ec5da1381ba745dab1e13d0dd2ccf1227b473b840fdf3e8cd",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:10:32Z",
+   "parents": [
+    "../stage2/add_core.vhd",
+    "tb_add_core.vhd"
+   ],
+   "parent_hashes": [
+    "0f57b98ab4a43ce9ec0bfdddeaca59af647025592b7b6381024fda700b8070df",
+    "7b915e0d73bb8e7090f7e85890274c39ae484080d2517e55e355f4562d13c36d"
+   ]
+  },
+  {
+   "name": "addmod.h",
+   "origin": "stage3/worker3",
+   "sha256": "381ae43e22bc86db6021b8c961da1f8f7fa25f28234037804080bc935c45e79f",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:44:50Z",
+   "parents": [
+    "../stage1/sample.md"
+   ],
+   "parent_hashes": [
+    "c905bfc9cd1497c06f3ba320ca68475b81b47688745434971422d16c3c2f8658"
+   ]
+  },
+  {
+   "name": "addmod.c",
+   "origin": "stage3/worker3",
+   "sha256": "f645d5b79af4c1b7b89ef4dd85a33980480808172b119f35f7649f975c94cecc",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:44:50Z",
+   "parents": [
+    "addmod.h",
+    "../stage1/sample.md"
+   ],
+   "parent_hashes": [
+    "381ae43e22bc86db6021b8c961da1f8f7fa25f28234037804080bc935c45e79f",
+    "c905bfc9cd1497c06f3ba320ca68475b81b47688745434971422d16c3c2f8658"
+   ]
+  },
+  {
+   "name": "add_core_model.c",
+   "origin": "stage3/worker3",
+   "sha256": "3b6bb8392394d11db9fb31896fa401451ff33065834bfebc9d3c7a7ac8a4cf25",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:46:16Z",
+   "parents": [
+    "add_core.vhd",
+    "addmod.h",
+    "addmod.c"
+   ],
+   "parent_hashes": [
+    "736b135fbc33ceb3f2cf996b6275b7027c15f2f75699f1cc28f3e8bb787e2e77",
+    "381ae43e22bc86db6021b8c961da1f8f7fa25f28234037804080bc935c45e79f",
+    "f645d5b79af4c1b7b89ef4dd85a33980480808172b119f35f7649f975c94cecc"
+   ]
+  },
+  {
+   "name": "add_core_model",
+   "origin": "stage3/worker3",
+   "sha256": "444ab434ec03989c1e9b71e2dc1bd1c3d82ec2716d747bc0b2f3d3ecf3a287f4",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:15:56Z",
+   "parents": [
+    "add_core_model.c",
+    "addmod.c"
+   ],
+   "parent_hashes": [
+    "3b6bb8392394d11db9fb31896fa401451ff33065834bfebc9d3c7a7ac8a4cf25",
+    "f645d5b79af4c1b7b89ef4dd85a33980480808172b119f35f7649f975c94cecc"
+   ]
+  },
+  {
+   "name": "diff-oracle.c",
+   "origin": "stage3/worker3",
+   "sha256": "32c3a81caaab450c6f2d7ed6eafc613613fe84d8eae0af037f5935fc68a01922",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:46:13Z",
+   "parents": [
+    "addmod.h",
+    "addmod.c",
+    "traces.csv"
+   ],
+   "parent_hashes": [
+    "381ae43e22bc86db6021b8c961da1f8f7fa25f28234037804080bc935c45e79f",
+    "f645d5b79af4c1b7b89ef4dd85a33980480808172b119f35f7649f975c94cecc",
+    "92fa56570bba685d36cf5b8fd0786216d53b18835d219fdffae737e7c59296d5"
+   ]
+  },
+  {
+   "name": "diff-oracle",
+   "origin": "stage3/worker3",
+   "sha256": "d48dcdb93b51c85ca310f0636a2ccde907d8d9a89bb32966afb726076f6daffe",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:15:56Z",
+   "parents": [
+    "diff-oracle.c",
+    "addmod.c"
+   ],
+   "parent_hashes": [
+    "32c3a81caaab450c6f2d7ed6eafc613613fe84d8eae0af037f5935fc68a01922",
+    "f645d5b79af4c1b7b89ef4dd85a33980480808172b119f35f7649f975c94cecc"
+   ]
+  },
+  {
+   "name": "differential-log.txt",
+   "origin": "stage3/worker3",
+   "sha256": "2aaf16023abba2739dd606fd497aca524e2b58685947a0c64389be0af4634344",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:16:18Z",
+   "parents": [
+    "diff-oracle.c",
+    "traces.csv"
+   ],
+   "parent_hashes": [
+    "32c3a81caaab450c6f2d7ed6eafc613613fe84d8eae0af037f5935fc68a01922",
+    "92fa56570bba685d36cf5b8fd0786216d53b18835d219fdffae737e7c59296d5"
+   ]
+  },
+  {
+   "name": "counterexample-turn.log",
+   "origin": "stage3/worker3",
+   "sha256": "8ca1de1383c5ab5d5af419f311e09051455c33eab41dbd1527efac0ccc85a33b",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:16:18Z",
+   "parents": [
+    "diff-oracle.c"
+   ],
+   "parent_hashes": [
+    "32c3a81caaab450c6f2d7ed6eafc613613fe84d8eae0af037f5935fc68a01922"
+   ]
+  },
+  {
+   "name": "contract-check.c",
+   "origin": "stage3/worker3",
+   "sha256": "8e8a6602f7259daf911b1434dfb6c76dd85c069e32aa0e42d1a18e0c45e33f0f",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:57:47Z",
+   "parents": [
+    "add32.dfy",
+    "addmod.h",
+    "addmod.c"
+   ],
+   "parent_hashes": [
+    "89061d3a1c0b26eed1edcf00e20a675f18058c8102ceb505a6dafa6384acbe49",
+    "381ae43e22bc86db6021b8c961da1f8f7fa25f28234037804080bc935c45e79f",
+    "f645d5b79af4c1b7b89ef4dd85a33980480808172b119f35f7649f975c94cecc"
+   ]
+  },
+  {
+   "name": "contract-check",
+   "origin": "stage3/worker3",
+   "sha256": "1b6127ca6352758a3403d96cf189fe189cdb4fa6e5ca757b6a818304563c28d5",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:16:18Z",
+   "parents": [
+    "contract-check.c",
+    "addmod.c"
+   ],
+   "parent_hashes": [
+    "8e8a6602f7259daf911b1434dfb6c76dd85c069e32aa0e42d1a18e0c45e33f0f",
+    "f645d5b79af4c1b7b89ef4dd85a33980480808172b119f35f7649f975c94cecc"
+   ]
+  },
+  {
+   "name": "contract-check.log",
+   "origin": "stage3/worker3",
+   "sha256": "cc35aef7900a663cabc73be6150c41c6defbf869851f9a40d073fcc99bbebe16",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:16:18Z",
+   "parents": [
+    "contract-check.c"
+   ],
+   "parent_hashes": [
+    "8e8a6602f7259daf911b1434dfb6c76dd85c069e32aa0e42d1a18e0c45e33f0f"
+   ]
+  },
+  {
+   "name": "add32.dfy",
+   "origin": "stage3/worker3",
+   "sha256": "89061d3a1c0b26eed1edcf00e20a675f18058c8102ceb505a6dafa6384acbe49",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:47:59Z",
+   "parents": [
+    "../stage1/sample.md"
+   ],
+   "parent_hashes": [
+    "c905bfc9cd1497c06f3ba320ca68475b81b47688745434971422d16c3c2f8658"
+   ]
+  },
+  {
+   "name": "add32-core.dfy",
+   "origin": "stage3/worker3",
+   "sha256": "8f448358a29b6e0b7d1127b14e9c71b7409fcfac46910dcad7138b7c5d8216ec",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:55:33Z",
+   "parents": [
+    "add32.dfy"
+   ],
+   "parent_hashes": [
+    "89061d3a1c0b26eed1edcf00e20a675f18058c8102ceb505a6dafa6384acbe49"
+   ]
+  },
+  {
+   "name": "dafny-verify.log",
+   "origin": "stage3/worker3",
+   "sha256": "7eb2e9de50f463eccab14bd71010df98dff6f6e33115065e6640a9ec944f29e8",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:50:35Z",
+   "parents": [
+    "add32.dfy"
+   ],
+   "parent_hashes": [
+    "89061d3a1c0b26eed1edcf00e20a675f18058c8102ceb505a6dafa6384acbe49"
+   ]
+  },
+  {
+   "name": "dafny-core-verify.log",
+   "origin": "stage3/worker3",
+   "sha256": "7eb2e9de50f463eccab14bd71010df98dff6f6e33115065e6640a9ec944f29e8",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:55:37Z",
+   "parents": [
+    "add32-core.dfy"
+   ],
+   "parent_hashes": [
+    "8f448358a29b6e0b7d1127b14e9c71b7409fcfac46910dcad7138b7c5d8216ec"
+   ]
+  },
+  {
+   "name": "fw/add.c",
+   "origin": "stage3/worker3",
+   "sha256": "2646059790be8910ed950a7a6d2fc0cc18d01dfcdfb98c388210114133e79f51",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:46:52Z",
+   "parents": [
+    "addmod.c"
+   ],
+   "parent_hashes": [
+    "f645d5b79af4c1b7b89ef4dd85a33980480808172b119f35f7649f975c94cecc"
+   ]
+  },
+  {
+   "name": "fw/main.c",
+   "origin": "stage3/worker3",
+   "sha256": "5d550f450766a9693fc3550646e3574893fc1e3a2a501cdec2f05a646915a17d",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:46:52Z",
+   "parents": [
+    "fw/add.c"
+   ],
+   "parent_hashes": [
+    "2646059790be8910ed950a7a6d2fc0cc18d01dfcdfb98c388210114133e79f51"
+   ]
+  },
+  {
+   "name": "fw/link.ld",
+   "origin": "stage3/worker3",
+   "sha256": "a3b92f38e2ec7f6e0a121e8076e09cfed499e2e3867115cc20673decdaa15d4b",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:46:52Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "fw/add.o",
+   "origin": "stage3/worker3",
+   "sha256": "e61ed56eaf51c9eb1bea0964886237de832577ac6f9061ea7a585bc27284c0f6",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:15:56Z",
+   "parents": [
+    "fw/add.c"
+   ],
+   "parent_hashes": [
+    "2646059790be8910ed950a7a6d2fc0cc18d01dfcdfb98c388210114133e79f51"
+   ]
+  },
+  {
+   "name": "fw/main.o",
+   "origin": "stage3/worker3",
+   "sha256": "eb9255f4d495edd6222afcc7d12b17c90552ae3c28d298b6486db99897c03237",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:15:56Z",
+   "parents": [
+    "fw/main.c"
+   ],
+   "parent_hashes": [
+    "5d550f450766a9693fc3550646e3574893fc1e3a2a501cdec2f05a646915a17d"
+   ]
+  },
+  {
+   "name": "fw/firmware.elf",
+   "origin": "stage3/worker3",
+   "sha256": "943200223b77554af5f685ea5fe86dec138b74f81d40a6c690e0adc7fe0147ff",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:15:56Z",
+   "parents": [
+    "fw/add.o",
+    "fw/main.o",
+    "fw/link.ld"
+   ],
+   "parent_hashes": [
+    "e61ed56eaf51c9eb1bea0964886237de832577ac6f9061ea7a585bc27284c0f6",
+    "eb9255f4d495edd6222afcc7d12b17c90552ae3c28d298b6486db99897c03237",
+    "a3b92f38e2ec7f6e0a121e8076e09cfed499e2e3867115cc20673decdaa15d4b"
+   ]
+  },
+  {
+   "name": "fw/firmware.bin",
+   "origin": "stage3/worker3",
+   "sha256": "a7de914eb53c757b838b770db46a5b307be46b1412e7cef947860b1f280b5e26",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:15:56Z",
+   "parents": [
+    "fw/firmware.elf"
+   ],
+   "parent_hashes": [
+    "943200223b77554af5f685ea5fe86dec138b74f81d40a6c690e0adc7fe0147ff"
+   ]
+  },
+  {
+   "name": "flash.bin",
+   "origin": "stage3/worker3",
+   "sha256": "0f961f40db458b918c9cf00ae42a197571ae9e574f9256811413b6da67233589",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:16:18Z",
+   "parents": [
+    "fw/firmware.bin"
+   ],
+   "parent_hashes": [
+    "a7de914eb53c757b838b770db46a5b307be46b1412e7cef947860b1f280b5e26"
+   ]
+  },
+  {
+   "name": "flash.bin.state",
+   "origin": "stage3/worker3",
+   "sha256": "1abaf1394e2cb71a79808a2f1f78dfbf12536e24903bb03533592f168724e253",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:16:18Z",
+   "parents": [
+    "driver/mock-target"
+   ],
+   "parent_hashes": [
+    "878c3fef62e149922a54be7cae87a0c4fc3ac3dd4228f35cffdb8b5c54de29b9"
+   ]
+  },
+  {
+   "name": "flash-verify.log",
+   "origin": "stage3/worker3",
+   "sha256": "56943e1eaf687e783fc7b3bd7ef950bcf8a187c6b7d38855cb457f9b69e85990",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:16:18Z",
+   "parents": [
+    "fw/firmware.bin",
+    "flash.bin"
+   ],
+   "parent_hashes": [
+    "a7de914eb53c757b838b770db46a5b307be46b1412e7cef947860b1f280b5e26",
+    "0f961f40db458b918c9cf00ae42a197571ae9e574f9256811413b6da67233589"
+   ]
+  },
+  {
+   "name": "sql-checks.sql",
+   "origin": "stage3/worker3",
+   "sha256": "6dd188a754150600d55bd61a4bbc69b45ef37e96eafe3a4ad366850bcc26ac35",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:47:38Z",
+   "parents": [
+    "traces.csv"
+   ],
+   "parent_hashes": [
+    "92fa56570bba685d36cf5b8fd0786216d53b18835d219fdffae737e7c59296d5"
+   ]
+  },
+  {
+   "name": "sql-results.txt",
+   "origin": "stage3/worker3",
+   "sha256": "e526da324d1822bc06e1ad75270ccb85a0bcba43e64cf0299e825a0c9defbefc",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:15:56Z",
+   "parents": [
+    "sql-checks.sql",
+    "traces.csv"
+   ],
+   "parent_hashes": [
+    "6dd188a754150600d55bd61a4bbc69b45ef37e96eafe3a4ad366850bcc26ac35",
+    "92fa56570bba685d36cf5b8fd0786216d53b18835d219fdffae737e7c59296d5"
+   ]
+  },
+  {
+   "name": "test-vectors.md",
+   "origin": "stage3/worker3",
+   "sha256": "9011e958f6470e16fdb87791b7e9ed18b471775fe218f735d34fa3996d169a93",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:58:40Z",
+   "parents": [
+    "differential-log.txt",
+    "traces.csv"
+   ],
+   "parent_hashes": [
+    "2aaf16023abba2739dd606fd497aca524e2b58685947a0c64389be0af4634344",
+    "92fa56570bba685d36cf5b8fd0786216d53b18835d219fdffae737e7c59296d5"
+   ]
+  },
+  {
+   "name": "hw-translation.md",
+   "origin": "stage3/worker3",
+   "sha256": "83d2b6ed5810eb2f797c19c1c85e0eb08dccae2ef1ea057115bae511adcbe303",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:58:53Z",
+   "parents": [
+    "add_core.vhd",
+    "add_core_model.c",
+    "differential-log.txt"
+   ],
+   "parent_hashes": [
+    "736b135fbc33ceb3f2cf996b6275b7027c15f2f75699f1cc28f3e8bb787e2e77",
+    "3b6bb8392394d11db9fb31896fa401451ff33065834bfebc9d3c7a7ac8a4cf25",
+    "2aaf16023abba2739dd606fd497aca524e2b58685947a0c64389be0af4634344"
+   ]
+  },
+  {
+   "name": "interface-contract.md",
+   "origin": "stage3/worker3",
+   "sha256": "df5349177d41919b6fa5bb331cfb1054c3a68a83eb2c994ed8c8ace08dbfc4c1",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:59:02Z",
+   "parents": [
+    "../stage1/sample.md",
+    "addmod.h",
+    "sql-checks.sql"
+   ],
+   "parent_hashes": [
+    "c905bfc9cd1497c06f3ba320ca68475b81b47688745434971422d16c3c2f8658",
+    "381ae43e22bc86db6021b8c961da1f8f7fa25f28234037804080bc935c45e79f",
+    "6dd188a754150600d55bd61a4bbc69b45ef37e96eafe3a4ad366850bcc26ac35"
+   ]
+  },
+  {
+   "name": "driver/proto.h",
+   "origin": "stage3/worker3",
+   "sha256": "4373cb39d1e72af2b5d834634dd88ce797e30e3563300107d205f1d54fd7bb1a",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:59:30Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "driver/sha256.h",
+   "origin": "stage3/worker3",
+   "sha256": "39cfa550a980573b13b63c93946a9f62e3d749f1eaee389a73b8bc712dfbde40",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:12:53Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "driver/sha256.c",
+   "origin": "stage3/worker3",
+   "sha256": "56c3964669130782bdf15f57f3f7369322889203fb1884be7b7b27cd95b87eb1",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:12:53Z",
+   "parents": [
+    "driver/sha256.h"
+   ],
+   "parent_hashes": [
+    "39cfa550a980573b13b63c93946a9f62e3d749f1eaee389a73b8bc712dfbde40"
+   ]
+  },
+  {
+   "name": "driver/mock-target.c",
+   "origin": "stage3/worker3",
+   "sha256": "d95262ea45d7b74b3ac6fa9abce65452d890f05d149cd74d170e0b325074880d",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:03:07Z",
+   "parents": [
+    "driver/proto.h",
+    "driver/sha256.h",
+    "addmod.c"
+   ],
+   "parent_hashes": [
+    "4373cb39d1e72af2b5d834634dd88ce797e30e3563300107d205f1d54fd7bb1a",
+    "39cfa550a980573b13b63c93946a9f62e3d749f1eaee389a73b8bc712dfbde40",
+    "f645d5b79af4c1b7b89ef4dd85a33980480808172b119f35f7649f975c94cecc"
+   ]
+  },
+  {
+   "name": "driver/driver.c",
+   "origin": "stage3/worker3",
+   "sha256": "27a9706103084ceff9b8d8a9e899672da68cb12e35382ab60b35030bea9eb949",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:03:04Z",
+   "parents": [
+    "driver/proto.h"
+   ],
+   "parent_hashes": [
+    "4373cb39d1e72af2b5d834634dd88ce797e30e3563300107d205f1d54fd7bb1a"
+   ]
+  },
+  {
+   "name": "driver/mock-target",
+   "origin": "stage3/worker3",
+   "sha256": "878c3fef62e149922a54be7cae87a0c4fc3ac3dd4228f35cffdb8b5c54de29b9",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:15:56Z",
+   "parents": [
+    "driver/mock-target.c",
+    "driver/sha256.c"
+   ],
+   "parent_hashes": [
+    "d95262ea45d7b74b3ac6fa9abce65452d890f05d149cd74d170e0b325074880d",
+    "56c3964669130782bdf15f57f3f7369322889203fb1884be7b7b27cd95b87eb1"
+   ]
+  },
+  {
+   "name": "driver/driver",
+   "origin": "stage3/worker3",
+   "sha256": "84c8d49ca84a6936d69243aca434b9fb4c80587c19c9b5466abdc74aedf5a305",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:15:56Z",
+   "parents": [
+    "driver/driver.c"
+   ],
+   "parent_hashes": [
+    "27a9706103084ceff9b8d8a9e899672da68cb12e35382ab60b35030bea9eb949"
+   ]
+  },
+  {
+   "name": "driver/driver-run.log",
+   "origin": "stage3/worker3",
+   "sha256": "eb981b4b91512a8d79146cf42b5fd82ffad971414a1e163e447c390a5807deb3",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:16:18Z",
+   "parents": [
+    "driver/driver",
+    "driver/mock-target",
+    "fw/firmware.bin"
+   ],
+   "parent_hashes": [
+    "84c8d49ca84a6936d69243aca434b9fb4c80587c19c9b5466abdc74aedf5a305",
+    "878c3fef62e149922a54be7cae87a0c4fc3ac3dd4228f35cffdb8b5c54de29b9",
+    "a7de914eb53c757b838b770db46a5b307be46b1412e7cef947860b1f280b5e26"
+   ]
+  },
+  {
+   "name": "frontend/rea_contract.gd",
+   "origin": "stage3/worker3",
+   "sha256": "e88f5920ea8755788f05e7ad7cb79194a0d2993a026f36737b097c64aacd437b",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:04:22Z",
+   "parents": [
+    "interface-contract.md"
+   ],
+   "parent_hashes": [
+    "df5349177d41919b6fa5bb331cfb1054c3a68a83eb2c994ed8c8ace08dbfc4c1"
+   ]
+  },
+  {
+   "name": "frontend/demo_scene.gd",
+   "origin": "stage3/worker3",
+   "sha256": "49968a53df45a52eb55f30ae9cd5e2bbd72cbf82b2ad15802d559e190381cdf7",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:12:53Z",
+   "parents": [
+    "frontend/rea_contract.gd"
+   ],
+   "parent_hashes": [
+    "e88f5920ea8755788f05e7ad7cb79194a0d2993a026f36737b097c64aacd437b"
+   ]
+  },
+  {
+   "name": "frontend/demo_scene.tscn",
+   "origin": "stage3/worker3",
+   "sha256": "ade95994cf54a4491ae9bbb20becda253b27b7bd8181f87ed1de611b26b586cf",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:04:35Z",
+   "parents": [
+    "frontend/demo_scene.gd"
+   ],
+   "parent_hashes": [
+    "49968a53df45a52eb55f30ae9cd5e2bbd72cbf82b2ad15802d559e190381cdf7"
+   ]
+  },
+  {
+   "name": "frontend/GDSCRIPT_REVIEW.md",
+   "origin": "stage3/worker3",
+   "sha256": "9240d8bac9f9e04114073e27172717cb7e2fb6327b0bcc405fd4ded43a90b3e9",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:04:53Z",
+   "parents": [
+    "frontend/rea_contract.gd",
+    "frontend/demo_scene.gd"
+   ],
+   "parent_hashes": [
+    "e88f5920ea8755788f05e7ad7cb79194a0d2993a026f36737b097c64aacd437b",
+    "49968a53df45a52eb55f30ae9cd5e2bbd72cbf82b2ad15802d559e190381cdf7"
+   ]
+  },
+  {
+   "name": "web/backend/package.json",
+   "origin": "stage3/worker3",
+   "sha256": "437c132a117e8b9ded37fa5c4f6c666deb937a630f3f73c9d6699c4f5e1c9ddb",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:05:42Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "web/backend/tsconfig.json",
+   "origin": "stage3/worker3",
+   "sha256": "9ce73d51cf822bdffd3b9928c0c2251a143942edadc28d8611171f6a156c28d4",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:05:06Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "web/backend/next.config.js",
+   "origin": "stage3/worker3",
+   "sha256": "d7434ab677f0bb62f5907cef136a61c810a89150da832b0c3d277cd77be37f08",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:05:06Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "web/backend/app/layout.tsx",
+   "origin": "stage3/worker3",
+   "sha256": "d94f4725045db60c8c2116adc34946a5640e955a3f593bf49f83fc9acd63b06a",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:05:17Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "web/backend/app/page.tsx",
+   "origin": "stage3/worker3",
+   "sha256": "77ed03eef1ac1048d914a4e4dd9bb46fcec154a0e2bd957e8465b6e30d42b62e",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:05:17Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "web/backend/app/globals.css",
+   "origin": "stage3/worker3",
+   "sha256": "68e209f3689fed2153c518a7f3f3c3cba5ba952897db8bb1f2d978cdd9605ca7",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:05:17Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "web/backend/app/api/ledger/route.ts",
+   "origin": "stage3/worker3",
+   "sha256": "4f89d71922e4e7651d1c4d254101771f6eea63a24e20e11885b57365001a5c0f",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:07:35Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "web/backend/app/api/verification/route.ts",
+   "origin": "stage3/worker3",
+   "sha256": "972af7fa5ae0839ba4173fac6edb19da76e6fb5f896f69112328fa6ada96094d",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:07:35Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "web/backend/app/api/counterexamples/route.ts",
+   "origin": "stage3/worker3",
+   "sha256": "da0a4add651cacf6dc77e1db8705cac55952f03cc0595782dcf7487b56c16689",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:07:35Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "web/backend/app/api/loop/trigger/route.ts",
+   "origin": "stage3/worker3",
+   "sha256": "c6d795316311bd0ee4a4312355a5b07d7b09833cfb2cdbde161648a511c311fa",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:07:35Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "web/backend/api-smoke.log",
+   "origin": "stage3/worker3",
+   "sha256": "1a4f7d69a3ff89936f5501200de838ad031e53fafccd2ab8eba6d2b809432c5c",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:09:06Z",
+   "parents": [
+    "web/backend/app/api/ledger/route.ts",
+    "web/backend/app/api/loop/trigger/route.ts"
+   ],
+   "parent_hashes": [
+    "4f89d71922e4e7651d1c4d254101771f6eea63a24e20e11885b57365001a5c0f",
+    "c6d795316311bd0ee4a4312355a5b07d7b09833cfb2cdbde161648a511c311fa"
+   ]
+  },
+  {
+   "name": "web/frontend/package.json",
+   "origin": "stage3/worker3",
+   "sha256": "b40f290bbb6313cd4c495e518cf2406f1305f104edd9c193c875b8121ba3622d",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:05:42Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "web/frontend/tsconfig.json",
+   "origin": "stage3/worker3",
+   "sha256": "4aa08d917591b8234385ea928c3297174d54eff6f61d5b7d7b0fb089895f9163",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:05:23Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "web/frontend/vite.config.ts",
+   "origin": "stage3/worker3",
+   "sha256": "43815af5ee2a7a9cdf04944d5d3929a1fa79788727955bf792cf130a9ac5fc64",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:05:23Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "web/frontend/index.html",
+   "origin": "stage3/worker3",
+   "sha256": "32bd6a0e0a742b1cd613b970e3faa6075f5675148746e28b379a76efe6a78394",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:05:23Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "web/frontend/src/main.tsx",
+   "origin": "stage3/worker3",
+   "sha256": "93f7963e701a354d89651699f5b9221b926fcf92b855193f79122749cfd574c0",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:05:31Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "evidence-ledger.jsonl",
+   "origin": "stage3/worker3",
+   "sha256": "38a6b017306617dd0fcd7572cfb126a68823ac62618d59f6719a82686adb45d5",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:14:01Z",
+   "parents": [
+    "../stage1/evidence.jsonl",
+    "../stage2/hypotheses.jsonl",
+    "differential-log.txt",
+    "counterexample-turn.log",
+    "router-e1-run.log"
+   ],
+   "parent_hashes": [
+    "58f83bcf8cac9d0603a8906ed7b9bce19b5d12a271b7e3cf8430bb2f2b7191fb",
+    "fde391cf600ac40010a83a79d51b8f0a1ecaad8ce97a7e9c36a5b658c2f2b125",
+    "2aaf16023abba2739dd606fd497aca524e2b58685947a0c64389be0af4634344",
+    "8ca1de1383c5ab5d5af419f311e09051455c33eab41dbd1527efac0ccc85a33b",
+    "d85754e7152501b21d3684695470813dea38a9501a835df7f04f7984828cb655"
+   ]
+  },
+  {
+   "name": "router-e1-run.log",
+   "origin": "stage3/worker3",
+   "sha256": "d85754e7152501b21d3684695470813dea38a9501a835df7f04f7984828cb655",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:16:18Z",
+   "parents": [
+    "../stage1/router/router.c"
+   ],
+   "parent_hashes": [
+    "85546847e3d00ec62aca9298ca8bf9c2926d19700fbb3347fecf49033e2d7233"
+   ]
+  },
+  {
+   "name": "Makefile",
+   "origin": "stage3/worker3",
+   "sha256": "ad5d81650454fe16d55d9db5caefbb3d3c247e69193dab119bf10fd767f2aa33",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:09:39Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "tools/gen-provenance.sh",
+   "origin": "stage3/worker3",
+   "sha256": "aa606b21dc862f708289d1704159d8347d04522f8a68a24904100c3b56ca26c7",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:12:05Z",
+   "parents": [],
+   "parent_hashes": []
+  },
+  {
+   "name": "README.md",
+   "origin": "stage3/worker3",
+   "sha256": "20d53adca3144ec7952f0afc68759c5aadb7f2a5fab94e15874b1dfdc46f76b6",
+   "version": "v1",
+   "timestamp": "2026-10-10T18:11:52Z",
+   "parents": [],
+   "parent_hashes": []
+  }
+ ]
+}

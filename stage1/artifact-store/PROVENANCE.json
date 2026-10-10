@@ -1,0 +1,217 @@
+{
+ "stage": "stage1",
+ "version_scheme": "vN",
+ "immutable": true,
+ "license_regime": "extracted/derived-from-rea content: MIT (upstream morluto/rea), see LICENSE-MIT-upstream.txt; freshly authored files: clean authorship, no additional license applied",
+ "artifacts": [
+  {
+   "name": "sample.bin",
+   "origin": "stage1/worker1 via mkbin.c",
+   "sha256": "d50224621b998b581e94ab675aa70449d9988ea163cc884d1972ca5d7f872850",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:23:14Z",
+   "parents": [
+    "mkbin.c"
+   ],
+   "parent_hashes": [
+    "99109f90d23aca2be69e077f00f315f496385a1385f2ce528334b2b882fdf635"
+   ],
+   "note": "hash referenced by evidence.jsonl observation o1; do not modify"
+  },
+  {
+   "name": "mkbin.c",
+   "origin": "stage1/worker1 hand-authored C11",
+   "sha256": "99109f90d23aca2be69e077f00f315f496385a1385f2ce528334b2b882fdf635",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:37:22Z",
+   "parents": [],
+   "parent_hashes": [],
+   "license": "fresh authorship"
+  },
+  {
+   "name": "sample.md",
+   "origin": "stage1/worker1 hand-authored",
+   "sha256": "c905bfc9cd1497c06f3ba320ca68475b81b47688745434971422d16c3c2f8658",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:37:22Z",
+   "parents": [],
+   "parent_hashes": [],
+   "license": "fresh authorship"
+  },
+  {
+   "name": "sample-disassembly.txt",
+   "origin": "stage1/worker1 hand-authored",
+   "sha256": "825c610015a14cce7b0ed38824c5cfc714b362726f779874dc48aacb0e2c84d6",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:37:22Z",
+   "parents": [
+    "sample.bin",
+    "sample.md"
+   ],
+   "parent_hashes": [
+    "d50224621b998b581e94ab675aa70449d9988ea163cc884d1972ca5d7f872850",
+    "c905bfc9cd1497c06f3ba320ca68475b81b47688745434971422d16c3c2f8658"
+   ],
+   "license": "fresh authorship"
+  },
+  {
+   "name": "sample-analysis.json",
+   "origin": "stage1/worker1 hand-authored",
+   "sha256": "d10bc91e4919d26923d237cf6841a9173ce362a6afa132d2ddca9e1f08a103e3",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:23:36Z",
+   "parents": [
+    "sample.bin",
+    "catalog-extract.md"
+   ],
+   "parent_hashes": [
+    "d50224621b998b581e94ab675aa70449d9988ea163cc884d1972ca5d7f872850",
+    "2c69091f658a9f7226b5ad8208af4b902c963ebeaa4cd29a109fce7f3e273943"
+   ],
+   "license": "interface shape derived from rea contracts: MIT (upstream morluto/rea), see LICENSE-MIT-upstream.txt"
+  },
+  {
+   "name": "evidence.jsonl",
+   "origin": "stage1/worker1 hand-authored + coordinator sha256 field",
+   "sha256": "58f83bcf8cac9d0603a8906ed7b9bce19b5d12a271b7e3cf8430bb2f2b7191fb",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:25:55Z",
+   "parents": [
+    "sample.bin",
+    "sample-analysis.json"
+   ],
+   "parent_hashes": [
+    "d50224621b998b581e94ab675aa70449d9988ea163cc884d1972ca5d7f872850",
+    "d10bc91e4919d26923d237cf6841a9173ce362a6afa132d2ddca9e1f08a103e3"
+   ],
+   "note": "observation records reference artifacts by sha256"
+  },
+  {
+   "name": "catalog-extract.md",
+   "origin": "stage1/worker1 surveyed from ~/workspace/rea (read-only)",
+   "sha256": "2c69091f658a9f7226b5ad8208af4b902c963ebeaa4cd29a109fce7f3e273943",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:37:22Z",
+   "parents": [
+    "external:morluto/rea"
+   ],
+   "parent_hashes": [],
+   "license": "MIT (upstream morluto/rea), see LICENSE-MIT-upstream.txt"
+  },
+  {
+   "name": "LICENSE-MIT-upstream.txt",
+   "origin": "verbatim copy of ~/workspace/rea/LICENSE",
+   "sha256": "798f9e4d18e49b30bf2f12696c8ced73dc4e1413da375a333d01281543a1ea8b",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:37:22Z",
+   "parents": [
+    "external:morluto/rea"
+   ],
+   "parent_hashes": [],
+   "license": "MIT (c) 2026 morluto"
+  },
+  {
+   "name": "README.md",
+   "origin": "stage1/worker1 + coordinator",
+   "sha256": "12819d6b94046d3f0d836db475889674a4c365fa7bf60ffc53d2914c36d56162",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:41:18Z",
+   "parents": [
+    "all stage1 artifacts"
+   ],
+   "parent_hashes": [],
+   "license": "fresh authorship"
+  },
+  {
+   "name": "alp-evidence.jsonl",
+   "origin": "stage1/coordinator hand-authored (user-spec verbatim record e1)",
+   "sha256": "1a8294cdbc55f0cacf4113335598eaf40235af496a70d839ae966676f21b4395",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:40:54Z",
+   "parents": [],
+   "parent_hashes": [],
+   "license": "fresh authorship",
+   "note": "no comment header: JSONL must stay parseable; provenance here only"
+  },
+  {
+   "name": "router/enc_registry.h",
+   "origin": "stage1/coordinator hand-authored C11",
+   "sha256": "9d0d15b84b61dc5f54de271a88d36795d052be3db1f00307474c9e5ec97ff460",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:40:48Z",
+   "parents": [],
+   "parent_hashes": [],
+   "license": "fresh authorship",
+   "note": ""
+  },
+  {
+   "name": "router/enc_registry.c",
+   "origin": "stage1/coordinator hand-authored C11",
+   "sha256": "e1ea5a07f8edc5732a8608c7ad0b75cc1e589e6421aaa285a31c094ea376405a",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:40:48Z",
+   "parents": [
+    "router/enc_registry.h"
+   ],
+   "parent_hashes": [
+    "9d0d15b84b61dc5f54de271a88d36795d052be3db1f00307474c9e5ec97ff460"
+   ],
+   "license": "fresh authorship",
+   "note": ""
+  },
+  {
+   "name": "router/router.c",
+   "origin": "stage1/coordinator hand-authored C11",
+   "sha256": "85546847e3d00ec62aca9298ca8bf9c2926d19700fbb3347fecf49033e2d7233",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:40:48Z",
+   "parents": [
+    "router/enc_registry.h"
+   ],
+   "parent_hashes": [
+    "9d0d15b84b61dc5f54de271a88d36795d052be3db1f00307474c9e5ec97ff460"
+   ],
+   "license": "fresh authorship",
+   "note": ""
+  },
+  {
+   "name": "router/Makefile",
+   "origin": "stage1/coordinator hand-authored",
+   "sha256": "61f3c06762a5ac49b5a0849bd86ed170b5eb5f398de3651d3159734af0378a93",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:40:48Z",
+   "parents": [
+    "router/router.c",
+    "router/enc_registry.c"
+   ],
+   "parent_hashes": [
+    "85546847e3d00ec62aca9298ca8bf9c2926d19700fbb3347fecf49033e2d7233",
+    "e1ea5a07f8edc5732a8608c7ad0b75cc1e589e6421aaa285a31c094ea376405a"
+   ],
+   "license": "fresh authorship",
+   "note": ""
+  },
+  {
+   "name": "router/routes.xml",
+   "origin": "stage1/coordinator (user-spec verbatim)",
+   "sha256": "e3ea94afdaad2a029d98a2db0419aa400629b7ce57a709c54d921598cb328e92",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:40:48Z",
+   "parents": [],
+   "parent_hashes": [],
+   "license": "fresh authorship",
+   "note": ""
+  },
+  {
+   "name": "router/arithmetic-analysis.mustache",
+   "origin": "stage1/coordinator (user-spec verbatim)",
+   "sha256": "af70f0501e074f671597440b3c6416b4ff5a2781781b91d24cfe3315a8705885",
+   "version": "v1",
+   "timestamp": "2026-10-10T17:40:48Z",
+   "parents": [],
+   "parent_hashes": [],
+   "license": "fresh authorship",
+   "note": ""
+  }
+ ]
+}

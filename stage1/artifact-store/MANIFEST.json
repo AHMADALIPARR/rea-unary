@@ -1,0 +1,145 @@
+{
+ "store": "stage1/artifact-store",
+ "version_scheme": "vN",
+ "immutable": true,
+ "policy": "append-only, hash-addressed: nothing is overwritten; a superseded artifact is added under a new version, never replaced.",
+ "revision_note": "v1 entries revised 2026-10-10 during provenance-header pass (headers added to text artifacts); sample.bin and evidence.jsonl bytes unchanged throughout",
+ "artifacts": [
+  {
+   "name": "sample.bin",
+   "version": "v1",
+   "sha256": "d50224621b998b581e94ab675aa70449d9988ea163cc884d1972ca5d7f872850",
+   "produced_by": "worker1 (rea-unary swarm) + coordinator fix-ups",
+   "produced_at": "2026-10-10T17:37:52Z",
+   "derived_from": "mkbin.c compiled and executed; byte layout per sample.md"
+  },
+  {
+   "name": "sample.md",
+   "version": "v1",
+   "sha256": "c905bfc9cd1497c06f3ba320ca68475b81b47688745434971422d16c3c2f8658",
+   "produced_by": "worker1 (rea-unary swarm) + coordinator fix-ups",
+   "produced_at": "2026-10-10T17:37:52Z",
+   "derived_from": "hand-authored byte-layout documentation (Worker 1) + provenance header (coordinator)"
+  },
+  {
+   "name": "sample-disassembly.txt",
+   "version": "v1",
+   "sha256": "825c610015a14cce7b0ed38824c5cfc714b362726f779874dc48aacb0e2c84d6",
+   "produced_by": "worker1 (rea-unary swarm) + coordinator fix-ups",
+   "produced_at": "2026-10-10T17:37:52Z",
+   "derived_from": "hand-authored from sample.bin bytes per sample.md; byte-verified + provenance header"
+  },
+  {
+   "name": "sample-analysis.json",
+   "version": "v1",
+   "sha256": "d10bc91e4919d26923d237cf6841a9173ce362a6afa132d2ddca9e1f08a103e3",
+   "produced_by": "worker1 (rea-unary swarm) + coordinator fix-ups",
+   "produced_at": "2026-10-10T17:37:52Z",
+   "derived_from": "hand-authored in extracted REA interface shape; cross-checked against sample.bin"
+  },
+  {
+   "name": "evidence.jsonl",
+   "version": "v1",
+   "sha256": "58f83bcf8cac9d0603a8906ed7b9bce19b5d12a271b7e3cf8430bb2f2b7191fb",
+   "produced_by": "worker1 (rea-unary swarm) + coordinator fix-ups",
+   "produced_at": "2026-10-10T17:37:52Z",
+   "derived_from": "hand-authored per user JSONL schema; observation sha256 added by coordinator"
+  },
+  {
+   "name": "mkbin.c",
+   "version": "v1",
+   "sha256": "99109f90d23aca2be69e077f00f315f496385a1385f2ce528334b2b882fdf635",
+   "produced_by": "worker1 (rea-unary swarm) + coordinator fix-ups",
+   "produced_at": "2026-10-10T17:37:52Z",
+   "derived_from": "hand-authored C11 generator (Worker 1) + provenance header"
+  },
+  {
+   "name": "catalog-extract.md",
+   "version": "v1",
+   "sha256": "2c69091f658a9f7226b5ad8208af4b902c963ebeaa4cd29a109fce7f3e273943",
+   "produced_by": "worker1 (rea-unary swarm) + coordinator fix-ups",
+   "produced_at": "2026-10-10T17:37:52Z",
+   "derived_from": "surveyed from ~/workspace/rea (read-only); MIT attribution included + provenance header"
+  },
+  {
+   "name": "README.md",
+   "version": "v1",
+   "sha256": "12819d6b94046d3f0d836db475889674a4c365fa7bf60ffc53d2914c36d56162",
+   "produced_by": "worker1 (rea-unary swarm) + coordinator fix-ups",
+   "produced_at": "2026-10-10T17:37:52Z",
+   "derived_from": "Worker 1 + coordinator (artifact-store, immutability, license-regime notes)"
+  },
+  {
+   "name": "LICENSE-MIT-upstream.txt",
+   "version": "v1",
+   "sha256": "798f9e4d18e49b30bf2f12696c8ced73dc4e1413da375a333d01281543a1ea8b",
+   "produced_by": "worker1 (rea-unary swarm) + coordinator fix-ups",
+   "produced_at": "2026-10-10T17:37:52Z",
+   "derived_from": "verbatim copy of ~/workspace/rea/LICENSE"
+  },
+  {
+   "name": "PROVENANCE.json",
+   "version": "v1",
+   "sha256": "f66a62df6800404c19b43a5fc5134a817d0b93453a21cc746f71c71f34bc3fee",
+   "produced_by": "worker1 (rea-unary swarm) + coordinator fix-ups",
+   "produced_at": "2026-10-10T17:37:52Z",
+   "derived_from": "coordinator-generated per-stage provenance record"
+  },
+  {
+   "name": "alp-evidence.jsonl",
+   "version": "v1",
+   "sha256": "1a8294cdbc55f0cacf4113335598eaf40235af496a70d839ae966676f21b4395",
+   "produced_by": "coordinator (rea-unary swarm)",
+   "produced_at": "2026-10-10T17:40:00Z",
+   "derived_from": "ALP evidence-routing mechanism, user spec 9"
+  },
+  {
+   "name": "router/enc_registry.h",
+   "version": "v1",
+   "sha256": "9d0d15b84b61dc5f54de271a88d36795d052be3db1f00307474c9e5ec97ff460",
+   "produced_by": "coordinator (rea-unary swarm)",
+   "produced_at": "2026-10-10T17:40:00Z",
+   "derived_from": "ALP evidence-routing mechanism, user spec 9"
+  },
+  {
+   "name": "router/enc_registry.c",
+   "version": "v1",
+   "sha256": "e1ea5a07f8edc5732a8608c7ad0b75cc1e589e6421aaa285a31c094ea376405a",
+   "produced_by": "coordinator (rea-unary swarm)",
+   "produced_at": "2026-10-10T17:40:00Z",
+   "derived_from": "ALP evidence-routing mechanism, user spec 9"
+  },
+  {
+   "name": "router/router.c",
+   "version": "v1",
+   "sha256": "85546847e3d00ec62aca9298ca8bf9c2926d19700fbb3347fecf49033e2d7233",
+   "produced_by": "coordinator (rea-unary swarm)",
+   "produced_at": "2026-10-10T17:40:00Z",
+   "derived_from": "ALP evidence-routing mechanism, user spec 9"
+  },
+  {
+   "name": "router/Makefile",
+   "version": "v1",
+   "sha256": "61f3c06762a5ac49b5a0849bd86ed170b5eb5f398de3651d3159734af0378a93",
+   "produced_by": "coordinator (rea-unary swarm)",
+   "produced_at": "2026-10-10T17:40:00Z",
+   "derived_from": "ALP evidence-routing mechanism, user spec 9"
+  },
+  {
+   "name": "router/routes.xml",
+   "version": "v1",
+   "sha256": "e3ea94afdaad2a029d98a2db0419aa400629b7ce57a709c54d921598cb328e92",
+   "produced_by": "coordinator (rea-unary swarm)",
+   "produced_at": "2026-10-10T17:40:00Z",
+   "derived_from": "ALP evidence-routing mechanism, user spec 9"
+  },
+  {
+   "name": "router/arithmetic-analysis.mustache",
+   "version": "v1",
+   "sha256": "af70f0501e074f671597440b3c6416b4ff5a2781781b91d24cfe3315a8705885",
+   "produced_by": "coordinator (rea-unary swarm)",
+   "produced_at": "2026-10-10T17:40:00Z",
+   "derived_from": "ALP evidence-routing mechanism, user spec 9"
+  }
+ ]
+}

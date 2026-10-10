@@ -1,0 +1,14 @@
+[validate] record e1: fields ok
+[decode] encoding=reverse-text-v1 payload -> "unsigned addition"
+[route] binary/arithmetic -> template arithmetic-analysis.mustache
+[render] ---- rendered prompt ----
+{{! arithmetic-analysis.mustache -- rea-unary }}
+{{! Copyright (C) 2026 Ahmad Ali Parr }}
+{{! SPDX-License-Identifier: LicenseRef-AGPL-3.0-NoAI-1.0 }}
+{{! Licensed under AGPLv3 with no-AI-training term (see LICENSE). }}
+{{! This code may not be used to train machine-learning models. }}
+<!-- provenance: producer=stage1/coordinator parents=[none:user-spec-verbatim] version=v1 full-sha256-in=PROVENANCE.json -->
+Analyze this candidate operation: unsigned addition
+Supporting evidence: ["trace-17"]
+Identify assumptions and checks needed before accepting it.
+[render] ---- end prompt ----

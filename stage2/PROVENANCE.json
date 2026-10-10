@@ -1,0 +1,134 @@
+{
+  "stage": "stage2",
+  "version_scheme": "vN",
+  "license_regime": "all stage2 files: fresh authorship (clean headers); no rea-extracted content; rea tool names referenced only via stage1 extract. No additional license applied.",
+  "artifacts": [
+    {
+      "name": "recovery-spec.md",
+      "origin": "stage2/worker2 hand-authored",
+      "sha256": "0f2d78d74a1d551db73368667121889dd1e24fdc3fc26547d3d3202110fa6dd4",
+      "version": "v1",
+      "timestamp": "2026-10-10T17:37:59Z",
+      "parents": [
+        "../stage1/sample.bin",
+        "../stage1/sample.md"
+      ],
+      "parent_hashes": [
+        "d50224621b998b581e94ab675aa70449d9988ea163cc884d1972ca5d7f872850"
+      ],
+      "license": "fresh authorship"
+    },
+    {
+      "name": "unary-mapping.md",
+      "origin": "stage2/worker2 hand-authored",
+      "sha256": "ad77f3bae5bb8617e5f89f12149dee322a09845c88bef490fc9ba1f6b41d0f78",
+      "version": "v1",
+      "timestamp": "2026-10-10T17:37:59Z",
+      "parents": [
+        "recovery-spec.md"
+      ],
+      "parent_hashes": [
+        "0f2d78d74a1d551db73368667121889dd1e24fdc3fc26547d3d3202110fa6dd4"
+      ],
+      "license": "fresh authorship"
+    },
+    {
+      "name": "spec.tex",
+      "origin": "stage2/worker2 hand-authored",
+      "sha256": "7d520f49152e268db2045797d4474df600b5a789eb866a83678a2c788ee368d8",
+      "version": "v1",
+      "timestamp": "2026-10-10T17:38:00Z",
+      "parents": [
+        "recovery-spec.md",
+        "hypotheses.jsonl"
+      ],
+      "parent_hashes": [
+        "0f2d78d74a1d551db73368667121889dd1e24fdc3fc26547d3d3202110fa6dd4",
+        "fde391cf600ac40010a83a79d51b8f0a1ecaad8ce97a7e9c36a5b658c2f2b125"
+      ],
+      "license": "fresh authorship"
+    },
+    {
+      "name": "state-machine.md",
+      "origin": "stage2/worker2 hand-authored",
+      "sha256": "002801b3ddae08c5d1a579bee63843ba949ccacbfa4f642f19dc220b713cb4f7",
+      "version": "v1",
+      "timestamp": "2026-10-10T17:38:00Z",
+      "parents": [
+        "recovery-spec.md"
+      ],
+      "parent_hashes": [
+        "0f2d78d74a1d551db73368667121889dd1e24fdc3fc26547d3d3202110fa6dd4"
+      ],
+      "license": "fresh authorship"
+    },
+    {
+      "name": "add_core.vhd",
+      "origin": "stage2/worker2 hand-authored",
+      "sha256": "0f57b98ab4a43ce9ec0bfdddeaca59af647025592b7b6381024fda700b8070df",
+      "version": "v1",
+      "timestamp": "2026-10-10T17:38:00Z",
+      "parents": [
+        "state-machine.md"
+      ],
+      "parent_hashes": [
+        "002801b3ddae08c5d1a579bee63843ba949ccacbfa4f642f19dc220b713cb4f7"
+      ],
+      "license": "fresh authorship"
+    },
+    {
+      "name": "add32.dfy",
+      "origin": "stage2/worker2 hand-authored",
+      "sha256": "02da892d01716f094710be3289929c36a5113d90fc7e6437940408e42c140461",
+      "version": "v1",
+      "timestamp": "2026-10-10T17:38:00Z",
+      "parents": [
+        "recovery-spec.md"
+      ],
+      "parent_hashes": [
+        "0f2d78d74a1d551db73368667121889dd1e24fdc3fc26547d3d3202110fa6dd4"
+      ],
+      "license": "fresh authorship"
+    },
+    {
+      "name": "add_core.als",
+      "origin": "stage2/worker2 hand-authored",
+      "sha256": "74b9cb48a6a637be18b2aac6603f9956c0069deb65f90a828de593868bb829a2",
+      "version": "v1",
+      "timestamp": "2026-10-10T17:38:00Z",
+      "parents": [
+        "state-machine.md"
+      ],
+      "parent_hashes": [
+        "002801b3ddae08c5d1a579bee63843ba949ccacbfa4f642f19dc220b713cb4f7"
+      ],
+      "license": "fresh authorship"
+    },
+    {
+      "name": "hypotheses.jsonl",
+      "origin": "stage2/worker2 hand-authored",
+      "sha256": "fde391cf600ac40010a83a79d51b8f0a1ecaad8ce97a7e9c36a5b658c2f2b125",
+      "version": "v1",
+      "timestamp": "2026-10-10T17:33:10Z",
+      "parents": [
+        "../stage1/evidence.jsonl"
+      ],
+      "parent_hashes": [
+        "58f83bcf8cac9d0603a8906ed7b9bce19b5d12a271b7e3cf8430bb2f2b7191fb"
+      ],
+      "note": "no comment header: JSONL must stay parseable; provenance here only"
+    },
+    {
+      "name": "README.md",
+      "origin": "stage2/worker2 + coordinator",
+      "sha256": "72763298c1e286dfb657c9cae07c5d965b8a8b4cee94781013bad8345cd4a77a",
+      "version": "v1",
+      "timestamp": "2026-10-10T17:38:08Z",
+      "parents": [
+        "all stage2 artifacts"
+      ],
+      "parent_hashes": [],
+      "license": "fresh authorship"
+    }
+  ]
+}

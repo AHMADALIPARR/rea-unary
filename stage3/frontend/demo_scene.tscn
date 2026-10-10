@@ -1,0 +1,13 @@
+<!-- Provenance: stage3/frontend (worker3), v1. Parents: stage3/frontend/demo_scene.gd.
+     Full hashes in stage3/PROVENANCE.json.
+     NOT EXECUTED: Godot is not installed in this environment. -->
+[gd_scene load_steps=2 format=3 uid="uid://b8reaunarydemo3"]
+
+[ext_resource type="Script" path="res://demo_scene.gd" id="1_demo"]
+
+[node name="DemoScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_demo")

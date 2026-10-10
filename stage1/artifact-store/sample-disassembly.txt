@@ -1,0 +1,22 @@
+# provenance: producer=stage1/worker1 parents=[bin:d50224621b99 doc:983584ea35d9] version=v1 full-sha256-in=PROVENANCE.json
+# Mock disassembly of sample.bin
+# MOCK OUTPUT — format is our own; it stands in for real Ghidra/Hopper
+# output (no real disassembler was run). Consistent with sample.md.
+# Load base 0x401020. File offsets in parentheses.
+
+FUNC main @ 0x401020, size 0x16
+
+0x401020 (0x00)  01 d8           ADD EAX, EBX        ; EAX = (EAX+EBX) mod 2^32; flags CF,PF,AF,ZF,SF,OF updated
+0x401022 (0x02)  83 f8 0a        CMP EAX, 10         ; flags = (EAX - 10)
+0x401025 (0x05)  7e 07           JLE 0x40102E        ; if ZF=1 or SF!=OF
+0x401027 (0x07)  b8 01 00 00 00  MOV EAX, 1
+0x40102c (0x0c)  eb 05           JMP 0x401033
+0x40102e (0x0e)  b8 00 00 00 00  MOV EAX, 0
+0x401033 (0x13)  89 c3           MOV EBX, EAX
+0x401035 (0x15)  c3              RET
+
+# Basic blocks (derived from the disassembly above):
+# BB1 0x401020-0x401026  -> 0x40102E (taken), 0x401027 (fall-through)
+# BB2 0x401027-0x40102D  -> 0x401033 (unconditional)
+# BB3 0x40102E-0x401032  -> 0x401033 (fall-through)
+# BB4 0x401033-0x401035  -> (returns)

@@ -1,0 +1,19 @@
+=== importing traces.csv ===
+=== check-a: EXECUTE rows match silicon-verified result+flags ===
+chk|violations|exec_rows
+check-a|0|10
+=== check-b: flags recomputed in SQL from operand ints ===
+chk|violations
+check-b|0
+=== check-c: state sequence follows FETCH->DECODE->EXECUTE->WRITEBACK ===
+chk|violations
+check-c|0
+=== check-d: privileged-state entry without authorization (vacuous) ===
+chk|privileged_state_rows|note
+check-d|0|VACUOUSLY PASSING -- no privileged/supervisor states exist in the FETCH/DECODE/EXECUTE/WRITEBACK machine
+=== check-e: done asserted exactly on WRITEBACK rows ===
+chk|done_outside_writeback|writeback_without_done|writeback_rows
+check-e|0|0|10
+=== trace shape ===
+chk|total_rows|distinct_vectors
+shape|64|10

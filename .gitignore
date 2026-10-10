@@ -1,0 +1,11 @@
+node_modules/
+.next/
+dist/
+build/
+*.o
+*.hi
+*.dyn_hi
+*.dyn_o
+work-obj*.cf
+*.log
+.DS_Store

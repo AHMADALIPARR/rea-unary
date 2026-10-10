@@ -1,0 +1,194 @@
+differential oracle: real x86 silicon (ADD EAX,EBX) vs C11 model vs GHDL sim
+registers compared per vector: result cf pf af zf sf of
+
+vec 0 a=00000000 b=00000000
+  silicon: result=00000000 cf=0 pf=1 af=0 zf=1 sf=0 of=0
+  cmodel : result=00000000 cf=0 pf=1 af=0 zf=1 sf=0 of=0
+  [PASS] vec 0 cmodel result got=00000000 want=00000000
+  [PASS] vec 0 cmodel cf     got=00000000 want=00000000
+  [PASS] vec 0 cmodel pf     got=00000001 want=00000001
+  [PASS] vec 0 cmodel af     got=00000000 want=00000000
+  [PASS] vec 0 cmodel zf     got=00000001 want=00000001
+  [PASS] vec 0 cmodel sf     got=00000000 want=00000000
+  [PASS] vec 0 cmodel of     got=00000000 want=00000000
+  ghdl   : result=00000000 cf=0 pf=1 af=0 zf=1 sf=0 of=0
+  [PASS] vec 0 ghdl result got=00000000 want=00000000
+  [PASS] vec 0 ghdl cf     got=00000000 want=00000000
+  [PASS] vec 0 ghdl pf     got=00000001 want=00000001
+  [PASS] vec 0 ghdl af     got=00000000 want=00000000
+  [PASS] vec 0 ghdl zf     got=00000001 want=00000001
+  [PASS] vec 0 ghdl sf     got=00000000 want=00000000
+  [PASS] vec 0 ghdl of     got=00000000 want=00000000
+
+vec 1 a=FFFFFFFF b=00000001
+  silicon: result=00000000 cf=1 pf=1 af=1 zf=1 sf=0 of=0
+  cmodel : result=00000000 cf=1 pf=1 af=1 zf=1 sf=0 of=0
+  [PASS] vec 1 cmodel result got=00000000 want=00000000
+  [PASS] vec 1 cmodel cf     got=00000001 want=00000001
+  [PASS] vec 1 cmodel pf     got=00000001 want=00000001
+  [PASS] vec 1 cmodel af     got=00000001 want=00000001
+  [PASS] vec 1 cmodel zf     got=00000001 want=00000001
+  [PASS] vec 1 cmodel sf     got=00000000 want=00000000
+  [PASS] vec 1 cmodel of     got=00000000 want=00000000
+  ghdl   : result=00000000 cf=1 pf=1 af=1 zf=1 sf=0 of=0
+  [PASS] vec 1 ghdl result got=00000000 want=00000000
+  [PASS] vec 1 ghdl cf     got=00000001 want=00000001
+  [PASS] vec 1 ghdl pf     got=00000001 want=00000001
+  [PASS] vec 1 ghdl af     got=00000001 want=00000001
+  [PASS] vec 1 ghdl zf     got=00000001 want=00000001
+  [PASS] vec 1 ghdl sf     got=00000000 want=00000000
+  [PASS] vec 1 ghdl of     got=00000000 want=00000000
+
+vec 2 a=7FFFFFFF b=00000001
+  silicon: result=80000000 cf=0 pf=1 af=1 zf=0 sf=1 of=1
+  cmodel : result=80000000 cf=0 pf=1 af=1 zf=0 sf=1 of=1
+  [PASS] vec 2 cmodel result got=80000000 want=80000000
+  [PASS] vec 2 cmodel cf     got=00000000 want=00000000
+  [PASS] vec 2 cmodel pf     got=00000001 want=00000001
+  [PASS] vec 2 cmodel af     got=00000001 want=00000001
+  [PASS] vec 2 cmodel zf     got=00000000 want=00000000
+  [PASS] vec 2 cmodel sf     got=00000001 want=00000001
+  [PASS] vec 2 cmodel of     got=00000001 want=00000001
+  ghdl   : result=80000000 cf=0 pf=1 af=1 zf=0 sf=1 of=1
+  [PASS] vec 2 ghdl result got=80000000 want=80000000
+  [PASS] vec 2 ghdl cf     got=00000000 want=00000000
+  [PASS] vec 2 ghdl pf     got=00000001 want=00000001
+  [PASS] vec 2 ghdl af     got=00000001 want=00000001
+  [PASS] vec 2 ghdl zf     got=00000000 want=00000000
+  [PASS] vec 2 ghdl sf     got=00000001 want=00000001
+  [PASS] vec 2 ghdl of     got=00000001 want=00000001
+
+vec 3 a=00000008 b=00000008
+  silicon: result=00000010 cf=0 pf=0 af=1 zf=0 sf=0 of=0
+  cmodel : result=00000010 cf=0 pf=0 af=1 zf=0 sf=0 of=0
+  [PASS] vec 3 cmodel result got=00000010 want=00000010
+  [PASS] vec 3 cmodel cf     got=00000000 want=00000000
+  [PASS] vec 3 cmodel pf     got=00000000 want=00000000
+  [PASS] vec 3 cmodel af     got=00000001 want=00000001
+  [PASS] vec 3 cmodel zf     got=00000000 want=00000000
+  [PASS] vec 3 cmodel sf     got=00000000 want=00000000
+  [PASS] vec 3 cmodel of     got=00000000 want=00000000
+  ghdl   : result=00000010 cf=0 pf=0 af=1 zf=0 sf=0 of=0
+  [PASS] vec 3 ghdl result got=00000010 want=00000010
+  [PASS] vec 3 ghdl cf     got=00000000 want=00000000
+  [PASS] vec 3 ghdl pf     got=00000000 want=00000000
+  [PASS] vec 3 ghdl af     got=00000001 want=00000001
+  [PASS] vec 3 ghdl zf     got=00000000 want=00000000
+  [PASS] vec 3 ghdl sf     got=00000000 want=00000000
+  [PASS] vec 3 ghdl of     got=00000000 want=00000000
+
+vec 4 a=00000003 b=00000000
+  silicon: result=00000003 cf=0 pf=1 af=0 zf=0 sf=0 of=0
+  cmodel : result=00000003 cf=0 pf=1 af=0 zf=0 sf=0 of=0
+  [PASS] vec 4 cmodel result got=00000003 want=00000003
+  [PASS] vec 4 cmodel cf     got=00000000 want=00000000
+  [PASS] vec 4 cmodel pf     got=00000001 want=00000001
+  [PASS] vec 4 cmodel af     got=00000000 want=00000000
+  [PASS] vec 4 cmodel zf     got=00000000 want=00000000
+  [PASS] vec 4 cmodel sf     got=00000000 want=00000000
+  [PASS] vec 4 cmodel of     got=00000000 want=00000000
+  ghdl   : result=00000003 cf=0 pf=1 af=0 zf=0 sf=0 of=0
+  [PASS] vec 4 ghdl result got=00000003 want=00000003
+  [PASS] vec 4 ghdl cf     got=00000000 want=00000000
+  [PASS] vec 4 ghdl pf     got=00000001 want=00000001
+  [PASS] vec 4 ghdl af     got=00000000 want=00000000
+  [PASS] vec 4 ghdl zf     got=00000000 want=00000000
+  [PASS] vec 4 ghdl sf     got=00000000 want=00000000
+  [PASS] vec 4 ghdl of     got=00000000 want=00000000
+
+vec 5 a=00000001 b=00000000
+  silicon: result=00000001 cf=0 pf=0 af=0 zf=0 sf=0 of=0
+  cmodel : result=00000001 cf=0 pf=0 af=0 zf=0 sf=0 of=0
+  [PASS] vec 5 cmodel result got=00000001 want=00000001
+  [PASS] vec 5 cmodel cf     got=00000000 want=00000000
+  [PASS] vec 5 cmodel pf     got=00000000 want=00000000
+  [PASS] vec 5 cmodel af     got=00000000 want=00000000
+  [PASS] vec 5 cmodel zf     got=00000000 want=00000000
+  [PASS] vec 5 cmodel sf     got=00000000 want=00000000
+  [PASS] vec 5 cmodel of     got=00000000 want=00000000
+  ghdl   : result=00000001 cf=0 pf=0 af=0 zf=0 sf=0 of=0
+  [PASS] vec 5 ghdl result got=00000001 want=00000001
+  [PASS] vec 5 ghdl cf     got=00000000 want=00000000
+  [PASS] vec 5 ghdl pf     got=00000000 want=00000000
+  [PASS] vec 5 ghdl af     got=00000000 want=00000000
+  [PASS] vec 5 ghdl zf     got=00000000 want=00000000
+  [PASS] vec 5 ghdl sf     got=00000000 want=00000000
+  [PASS] vec 5 ghdl of     got=00000000 want=00000000
+
+vec 6 a=80000000 b=80000000
+  silicon: result=00000000 cf=1 pf=1 af=0 zf=1 sf=0 of=1
+  cmodel : result=00000000 cf=1 pf=1 af=0 zf=1 sf=0 of=1
+  [PASS] vec 6 cmodel result got=00000000 want=00000000
+  [PASS] vec 6 cmodel cf     got=00000001 want=00000001
+  [PASS] vec 6 cmodel pf     got=00000001 want=00000001
+  [PASS] vec 6 cmodel af     got=00000000 want=00000000
+  [PASS] vec 6 cmodel zf     got=00000001 want=00000001
+  [PASS] vec 6 cmodel sf     got=00000000 want=00000000
+  [PASS] vec 6 cmodel of     got=00000001 want=00000001
+  ghdl   : result=00000000 cf=1 pf=1 af=0 zf=1 sf=0 of=1
+  [PASS] vec 6 ghdl result got=00000000 want=00000000
+  [PASS] vec 6 ghdl cf     got=00000001 want=00000001
+  [PASS] vec 6 ghdl pf     got=00000001 want=00000001
+  [PASS] vec 6 ghdl af     got=00000000 want=00000000
+  [PASS] vec 6 ghdl zf     got=00000001 want=00000001
+  [PASS] vec 6 ghdl sf     got=00000000 want=00000000
+  [PASS] vec 6 ghdl of     got=00000001 want=00000001
+
+vec 7 a=7FFFFFFF b=7FFFFFFF
+  silicon: result=FFFFFFFE cf=0 pf=0 af=1 zf=0 sf=1 of=1
+  cmodel : result=FFFFFFFE cf=0 pf=0 af=1 zf=0 sf=1 of=1
+  [PASS] vec 7 cmodel result got=FFFFFFFE want=FFFFFFFE
+  [PASS] vec 7 cmodel cf     got=00000000 want=00000000
+  [PASS] vec 7 cmodel pf     got=00000000 want=00000000
+  [PASS] vec 7 cmodel af     got=00000001 want=00000001
+  [PASS] vec 7 cmodel zf     got=00000000 want=00000000
+  [PASS] vec 7 cmodel sf     got=00000001 want=00000001
+  [PASS] vec 7 cmodel of     got=00000001 want=00000001
+  ghdl   : result=FFFFFFFE cf=0 pf=0 af=1 zf=0 sf=1 of=1
+  [PASS] vec 7 ghdl result got=FFFFFFFE want=FFFFFFFE
+  [PASS] vec 7 ghdl cf     got=00000000 want=00000000
+  [PASS] vec 7 ghdl pf     got=00000000 want=00000000
+  [PASS] vec 7 ghdl af     got=00000001 want=00000001
+  [PASS] vec 7 ghdl zf     got=00000000 want=00000000
+  [PASS] vec 7 ghdl sf     got=00000001 want=00000001
+  [PASS] vec 7 ghdl of     got=00000001 want=00000001
+
+vec 8 a=80000000 b=FFFFFFFF
+  silicon: result=7FFFFFFF cf=1 pf=1 af=0 zf=0 sf=0 of=1
+  cmodel : result=7FFFFFFF cf=1 pf=1 af=0 zf=0 sf=0 of=1
+  [PASS] vec 8 cmodel result got=7FFFFFFF want=7FFFFFFF
+  [PASS] vec 8 cmodel cf     got=00000001 want=00000001
+  [PASS] vec 8 cmodel pf     got=00000001 want=00000001
+  [PASS] vec 8 cmodel af     got=00000000 want=00000000
+  [PASS] vec 8 cmodel zf     got=00000000 want=00000000
+  [PASS] vec 8 cmodel sf     got=00000000 want=00000000
+  [PASS] vec 8 cmodel of     got=00000001 want=00000001
+  ghdl   : result=7FFFFFFF cf=1 pf=1 af=0 zf=0 sf=0 of=1
+  [PASS] vec 8 ghdl result got=7FFFFFFF want=7FFFFFFF
+  [PASS] vec 8 ghdl cf     got=00000001 want=00000001
+  [PASS] vec 8 ghdl pf     got=00000001 want=00000001
+  [PASS] vec 8 ghdl af     got=00000000 want=00000000
+  [PASS] vec 8 ghdl zf     got=00000000 want=00000000
+  [PASS] vec 8 ghdl sf     got=00000000 want=00000000
+  [PASS] vec 8 ghdl of     got=00000001 want=00000001
+
+vec 9 a=FFFFFFFF b=FFFFFFFF
+  silicon: result=FFFFFFFE cf=1 pf=0 af=1 zf=0 sf=1 of=0
+  cmodel : result=FFFFFFFE cf=1 pf=0 af=1 zf=0 sf=1 of=0
+  [PASS] vec 9 cmodel result got=FFFFFFFE want=FFFFFFFE
+  [PASS] vec 9 cmodel cf     got=00000001 want=00000001
+  [PASS] vec 9 cmodel pf     got=00000000 want=00000000
+  [PASS] vec 9 cmodel af     got=00000001 want=00000001
+  [PASS] vec 9 cmodel zf     got=00000000 want=00000000
+  [PASS] vec 9 cmodel sf     got=00000001 want=00000001
+  [PASS] vec 9 cmodel of     got=00000000 want=00000000
+  ghdl   : result=FFFFFFFE cf=1 pf=0 af=1 zf=0 sf=1 of=0
+  [PASS] vec 9 ghdl result got=FFFFFFFE want=FFFFFFFE
+  [PASS] vec 9 ghdl cf     got=00000001 want=00000001
+  [PASS] vec 9 ghdl pf     got=00000000 want=00000000
+  [PASS] vec 9 ghdl af     got=00000001 want=00000001
+  [PASS] vec 9 ghdl zf     got=00000000 want=00000000
+  [PASS] vec 9 ghdl sf     got=00000001 want=00000001
+  [PASS] vec 9 ghdl of     got=00000000 want=00000000
+
+differential summary: 140 PASS, 0 FAIL (140 comparisons = 10 vectors x 7 registers x 2 implementations)
